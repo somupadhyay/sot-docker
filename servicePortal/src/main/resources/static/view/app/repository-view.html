@@ -1,0 +1,14 @@
+<h1>Available repository.</h1>
+<md-list> 
+	<md-list-item ng-repeat="repo in repositories">
+		<md-card>
+		  <md-card-title> 
+			<md-card-title-text>
+			  <span class="md-headline">{{repo}}</span> 
+			  <span class="md-subhead">docker pull liacm181:5000/{{repo}}</span> 
+			</md-card-title-text> 
+	      </md-card-title> 
+	   </md-card> 
+	</md-list-item> 
+</md-list>
+

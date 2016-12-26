@@ -23,5 +23,6 @@ head.load(
         { file: 'js/app.js'},
         { file: 'js/controller/config.js'},
         { file: 'js/controller/appCtrl.js'},
-        { file: 'js/controller/requestCtrl.js'}
+        { file: 'js/controller/requestCtrl.js'},
+        { file: 'js/controller/repositoryCtrl.js'}
 );

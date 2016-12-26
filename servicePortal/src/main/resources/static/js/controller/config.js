@@ -17,6 +17,10 @@ portalModule
 	        url: '/new-request',
 	        templateUrl: 'view/app/request-form.html',
 	        controller: 'requestCtrl'
+	    }).state( 'repository', {
+	        url: '/repository',
+	        templateUrl: 'view/app/repository-view.html',
+	        controller: 'repositoryCtrl'
 	    });
 	
 	 $mdIconProvider
@@ -29,6 +33,7 @@ portalModule
      .icon("phone"      , "assets/svg/phone.svg"       , 512)
 	 .icon("add"        , "assets/svg/ic_add_box_48px.svg"   , 512)
 	 .icon("remove"     , "assets/svg/ic_remove_48px.svg" , 512)
+	 .icon("repos"      , "assets/svg/ic_apps_black_48px.svg", 512)
 	 .icon("home"       , "assets/svg/ic_home_black_48px.svg", 512);
 	 
 	

@@ -11,6 +11,9 @@ import com.netflix.zuul.context.RequestContext;
 public class BasicAuthorizationFilter extends ZuulFilter {
 	@Value("${jenkins.credentials}")
 	private String jenkinsCredentials;
+	
+	@Value("${registry.credentials}")
+	private String registryCredentials;
 
 	private static final Logger LOGGER = LogManager
 			.getLogger(BasicAuthorizationFilter.class);
@@ -24,6 +27,11 @@ public class BasicAuthorizationFilter extends ZuulFilter {
 					"Authorization",
 					"Basic "
 							+ Base64Utils.encodeToString(jenkinsCredentials.getBytes()));
+		}else if(ctx.getRequest().getRequestURL().toString().contains("registry")){
+			ctx.addZuulRequestHeader(
+					"Authorization",
+					"Basic "
+							+ Base64Utils.encodeToString(registryCredentials.getBytes()));
 		}
 
 		return null;
