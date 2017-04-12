@@ -1,0 +1,18 @@
+demo-app:
+  tty: true
+  command:
+  - -p
+  - '9000'
+  image: liacm181:5000/demoapp
+  stdin_open: true
+
+demo-app-lb:
+  ports:
+  - '9000'
+  expose:
+  - 9090:9000
+  tty: true
+  image: rancher/load-balancer-service
+  links:
+  - demo-app:demo-app
+  stdin_open: true
