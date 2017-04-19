@@ -1,7 +1,7 @@
 docker-demo:
   scale: 2
   health_check:
-    port: 9000
+    port: 9001
     interval: 2000
     unhealthy_threshold: 3
     request_line: GET /health HTTP/1.0
