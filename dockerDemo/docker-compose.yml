@@ -14,5 +14,5 @@ docker-demo-lb:
   tty: true
   image: rancher/load-balancer-service
   links:
-  - demo-app: docker-demo
+  - docker-demo: docker-demo
   stdin_open: true
