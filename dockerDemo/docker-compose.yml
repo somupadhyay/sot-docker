@@ -1,0 +1,18 @@
+docker-demo:
+  tty: true
+  command:
+  - -p
+  - '9000'
+  image: somupadhyay/docker-demo
+  stdin_open: true
+
+docker-demo-lb:
+  ports:
+  - '9000'
+  expose:
+  - 9090:9000
+  tty: true
+  image: rancher/load-balancer-service
+  links:
+  - demo-app: docker-demo
+  stdin_open: true
