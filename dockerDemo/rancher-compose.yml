@@ -1,11 +1,9 @@
 docker-demo:
-  scale: 2
+  scale: 1
   health_check:
-    port: 9001
+    port: 8585
     interval: 2000
     unhealthy_threshold: 3
     request_line: GET /health HTTP/1.0
     healthy_threshold: 2 
     response_timeout: 2000
-docker-demo-lb:
-  scale: 1
